@@ -1,4 +1,5 @@
 var mongo = require('mongodb');
+var gcm = require('./gcm.js');
 
 var Server = mongo.Server,
     Db = mongo.Db,
@@ -39,6 +40,7 @@ exports.opened = function (req, res) {
       } else {
         console.log('Success ' + result[0]);
         res.send(result[0]);
+        gcm.send("The door is open!");
       }
     })
   })
@@ -53,3 +55,4 @@ exports.closed = function (req, res) {
     })
   });
 }
+
