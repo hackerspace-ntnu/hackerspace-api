@@ -40,7 +40,7 @@ exports.opened = function (req, res) {
       } else {
         console.log('Success ' + result[0]);
         res.send(result[0]);
-        gcm.send("The door is open!");
+        //gcm.send("The door is open!");
       }
     })
   })

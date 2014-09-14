@@ -12,6 +12,7 @@ app.post('/register-android', gcm.register);
 app.get('/door', door.isOpen);
 app.post('/door', door.opened);
 app.put('/door', door.closed);
+app.post('/door/push', gcm.push);
 
 app.listen(3000);
 console.log('Listen on port 3000...')

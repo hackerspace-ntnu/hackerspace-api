@@ -47,6 +47,12 @@ exports.register = function(request, response){
   })
 }
 
+exports.push = function(req, res){
+  exports.send('Hackerspace NTNU is open!');
+  var resobj = {};
+  resobj.success = true;
+  res.send(resobj);
+}
 
 exports.send = function(msg){
   var message = new gcm.Message();
